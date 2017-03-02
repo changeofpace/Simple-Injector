@@ -82,6 +82,10 @@ bool core::CreateRemoteThreadUsingLoadLibrary(DWORD ProcessID, QString PayloadPa
                     }
                 }
             }
+
+            // TODO: async
+//            if (!VirtualFreeEx(hProcess, threadBase, 0, MEM_RELEASE))
+//                qDebug("VirtualFreeEx failed %d", GetLastError());
         }
         CloseHandle(hProcess);
     }
